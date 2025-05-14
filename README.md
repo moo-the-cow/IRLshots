@@ -6,15 +6,15 @@ IRLshots is a powerful screenshot and animation tool for streamers that integrat
 
 ## Features
 
-✅ Direct OBS WebSocket integration for capturing screenshots
-✅ Stylish polaroid-style animations when displaying captures
-✅ Browser Source for easy integration with OBS
-✅ Discord webhook integration for automatic sharing
-✅ Twitch chat command support
-✅ Auto-connect to OBS on startup option
-✅ Customizable output folder for saving screenshots
-✅ Internationalization support (currently English and Japanese)
-✅ Modern, clean UI with dark mode
+- ✅ Direct OBS WebSocket integration for capturing screenshots
+- ✅ Stylish polaroid-style animations when displaying captures
+- ✅ Browser Source for easy integration with OBS
+- ✅ Discord webhook integration for automatic sharing
+- ✅ Twitch chat command support
+- ✅ Auto-connect to OBS on startup option
+- ✅ Customizable output folder for saving screenshots
+- ✅ Internationalization support (currently English and Japanese)
+- ✅ Modern, clean UI with dark mode
 
 ## Installation
 
