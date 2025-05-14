@@ -30,7 +30,7 @@ If you want to build from source, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/irlshots.git
+git clone https://github.com/IRLtools/IRLshots.git
 cd irlshots
 
 # Install dependencies
