@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "IRLshots",
+    "saveSettings": "設定を保存"
+  },
+  "tabs": {
+    "obsConnection": "OBS接続",
+    "settings": "設定",
+    "chatIntegration": "チャット連携"
+  },
+  "obsTab": {
+    "title": "OBS接続",
+    "host": "ホスト",
+    "port": "ポート",
+    "password": "パスワード",
+    "connect": "OBSに接続",
+    "autoConnect": "起動時に自動接続",
+    "scene": "シーン",
+    "source": "ソース",
+    "filterByType": "タイプでフィルター",
+    "testButton": "ポラロイドテスト",
+    "takeScreenshot": "スクリーンショット撮影",
+    "connectionSuccess": "OBSへの接続に成功しました",
+    "connectionError": "OBSへの接続エラー: {error}",
+    "noSources": "ソースがありません。まずOBSに接続してください。",
+    "selectScene": "最初にシーンを選択してください"
+  },
+  "settingsTab": {
+    "title": "設定",
+    "imageSettings": "画像設定",
+    "imageWidth": "画像幅",
+    "imageHeight": "画像高さ",
+    "outputFolder": "出力フォルダ",
+    "selectFolder": "フォルダを選択",
+    "saveScreenshots": "スクリーンショットを保存",
+    "discordSettings": "Discord設定",
+    "sendToDiscord": "Discordに送信",
+    "discordWebhook": "Discord Webhook URL",
+    "browserSource": "ブラウザソース",
+    "wsPort": "WebSocketポート",
+    "animationDelay": "アニメーション遅延（ミリ秒）",
+    "language": "言語",
+    "restartRequired": "言語の変更を反映するにはアプリの再起動が必要です"
+  },
+  "chatTab": {
+    "title": "チャット連携",
+    "enable": "Twitch連携を有効化",
+    "channel": "チャンネル",
+    "username": "ユーザー名",
+    "oauthToken": "OAuthトークン",
+    "command": "コマンド",
+    "permissions": "コマンド使用権限",
+    "permEveryone": "全員",
+    "permSubscriber": "サブスクライバー以上",
+    "permVIP": "VIP以上",
+    "permModerator": "モデレーター以上",
+    "permBroadcaster": "配信者のみ"
+  },
+  "logs": {
+    "title": "アプリケーションログ",
+    "clear": "クリア",
+    "expand": "ログを展開",
+    "collapse": "ログを折りたたむ"
+  }
+}

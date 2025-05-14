@@ -7,29 +7,20 @@ IRLshots is a powerful screenshot and animation tool for streamers that integrat
 ## Features
 
 ✅ Direct OBS WebSocket integration for capturing screenshots
-
 ✅ Stylish polaroid-style animations when displaying captures
-
 ✅ Browser Source for easy integration with OBS
-
 ✅ Discord webhook integration for automatic sharing
-
 ✅ Twitch chat command support
-
 ✅ Auto-connect to OBS on startup option
-
 ✅ Customizable output folder for saving screenshots
-
 ✅ Internationalization support (currently English and Japanese)
-
 ✅ Modern, clean UI with dark mode
-
 
 ## Installation
 
 ### From Release
 
-1. Download the latest release from the [Releases page](https://github.com/IRLtools/IRLshots/releases)
+1. Download the latest release from the [Releases page](https://github.com/yourusername/irlshots/releases)
 2. Run the installer and follow the prompts
 3. Launch IRLshots from your Start menu or desktop shortcut
 
@@ -39,7 +30,7 @@ If you want to build from source, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/IRLtools/IRLshots.git
+git clone https://github.com/yourusername/irlshots.git
 cd irlshots
 
 # Install dependencies
@@ -80,8 +71,13 @@ npm run pack
 
 1. Go to the Chat Integration tab and enable Twitch integration
 2. Enter your channel name and authentication details
-3. Set the command (default is !sc) and permission level
+3. Set the command (default is !polaroid) and permission level
 4. When viewers use the command, IRLshots will take a screenshot
+
+## Keyboard Shortcuts
+
+- Take Screenshot: Not yet implemented (coming soon!)
+- Test Animation: Not yet implemented (coming soon!)
 
 ## Configuration
 

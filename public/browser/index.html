@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>IRLshots Browser Source</title>
+  <style>
+    body { margin:0; background:transparent; overflow:hidden; }
+    
+    .polaroid-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+    
+    .polaroid {
+      background-color: white;
+      padding: 20px 20px 70px 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      width: auto;
+      height: auto;
+      max-width: 840px; /* Actual image max-width 800px + 40px padding */
+      max-height: 80%;
+      position: relative;
+      transform-origin: center;
+      /* Authentic Polaroid look */
+      border-radius: 2px;
+      background: linear-gradient(to bottom, #f9f9f9, #fff);
+      /* Texture overlay */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.7);
+    }
+    
+    /* Texture for the polaroid border */
+    .polaroid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/png;base64,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');
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .polaroid img {
+      max-width: 800px; /* Hard limit to 800px max width */
+      width: 100%; /* Fill container but respect max-width */
+      height: auto; /* Maintain aspect ratio */
+      display: block;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .polaroid-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #333;
+      font-size: 18px;
+      font-weight: 500;
+      z-index: 3;
+    }
+    
+    /* Arch slide animation from left */
+    @keyframes archSlideFromLeft {
+      0% { transform: translateX(-150%) rotate(-20deg) scale(0.8); opacity: 0; }
+      30% { transform: translateX(-20%) rotate(-10deg) scale(0.9); opacity: 1; }
+      40% { transform: translateX(0) rotate(-5deg) scale(1); opacity: 1; }
+      80% { transform: translateX(0) rotate(-5deg) scale(1); opacity: 1; }
+      100% { transform: translateX(120%) rotate(0deg) scale(0.9); opacity: 0; }
+    }
+    
+    /* Arch slide animation from right */
+    @keyframes archSlideFromRight {
+      0% { transform: translateX(150%) rotate(20deg) scale(0.8); opacity: 0; }
+      30% { transform: translateX(20%) rotate(10deg) scale(0.9); opacity: 1; }
+      40% { transform: translateX(0) rotate(5deg) scale(1); opacity: 1; }
+      80% { transform: translateX(0) rotate(5deg) scale(1); opacity: 1; }
+      100% { transform: translateX(-120%) rotate(0deg) scale(0.9); opacity: 0; }
+    }
+    
+    /* Development animation effect */
+    @keyframes develop {
+      0% { filter: brightness(2) contrast(0.3) blur(5px); opacity: 0.7; }
+      20% { filter: brightness(1.7) contrast(0.5) blur(3px); opacity: 0.8; }
+      50% { filter: brightness(1.3) contrast(0.7) blur(1px); opacity: 0.9; }
+      100% { filter: brightness(1) contrast(1) blur(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  let queue = [];
+  let displaying = false;
+  
+  socket.on('newSnapshot', data => {
+    queue.push(data);
+    if (!displaying) displayNext();
+  });
+  
+  // Handle test animation signals
+  socket.on('testAnimation', data => {
+    // Create a test image for the polaroid
+    const testImageData = createTestImage();
+    queue.push({
+      imageData: testImageData,
+      animationDelay: data.animationDelay || 5000,
+      animationDirection: data.animationDirection || 'left',
+      isTest: true
+    });
+    if (!displaying) displayNext();
+  });
+  
+  // Create a test image using canvas
+  function createTestImage() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 450;
+    const ctx = canvas.getContext('2d');
+    
+    // Create a gradient background
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#3498db');   // Start with blue
+    gradient.addColorStop(1, '#2ecc71');   // End with green
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Add some text
+    ctx.fillStyle = 'white';
+    ctx.font = 'bold 60px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('Test Image', canvas.width/2, canvas.height/2 - 30);
+    
+    ctx.font = '30px Arial';
+    ctx.fillText('IRLshots', canvas.width/2, canvas.height/2 + 30);
+    
+    // Add current date/time
+    ctx.font = '24px Arial';
+    ctx.fillText(getCurrentDateTime(), canvas.width/2, canvas.height/2 + 80);
+    
+    // Return as base64 data URL (strip the prefix)
+    return canvas.toDataURL('image/png').split(',')[1];
+  }
+  
+  function getCurrentDateTime() {
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    return `${date} ${time}`;
+  }
+  
+  async function displayNext() {
+    if (!queue.length) { displaying = false; return; }
+    displaying = true;
+    
+    const { imageData, animationDelay, animationDirection = 'left' } = queue.shift();
+    const animationDuration = animationDelay || 5000;
+    
+    // Create polaroid container
+    const container = document.createElement('div');
+    container.className = 'polaroid-container';
+    
+    // Create polaroid frame
+    const polaroid = document.createElement('div');
+    polaroid.className = 'polaroid';
+    
+    // Apply appropriate animation based on direction
+    const animationName = animationDirection === 'left' ? 'archSlideFromLeft' : 'archSlideFromRight';
+    polaroid.style.animation = `${animationName} ${animationDuration}ms ease-in-out forwards`;
+    
+    // Create and add the image
+    const img = document.createElement('img');
+    img.src = 'data:image/png;base64,' + imageData;
+    img.style.animation = `develop ${animationDuration * 0.3}ms ease-out forwards`;
+    
+    // Add timestamp as a proper caption
+    const caption = document.createElement('div');
+    caption.className = 'polaroid-caption';
+    caption.textContent = getCurrentDateTime();
+    
+    // Add elements to DOM
+    polaroid.appendChild(img);
+    polaroid.appendChild(caption);
+    container.appendChild(polaroid);
+    document.body.appendChild(container);
+    
+    // Remove after animation completes
+    await new Promise(res => setTimeout(res, animationDuration + 100));
+    document.body.removeChild(container);
+    
+    // Process next item in queue
+    displayNext();
+  }
+</script>
+</body>
+</html>

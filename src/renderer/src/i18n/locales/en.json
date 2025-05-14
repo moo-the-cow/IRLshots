@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "IRLshots",
+    "saveSettings": "Save Settings"
+  },
+  "tabs": {
+    "obsConnection": "OBS Connection",
+    "settings": "Settings",
+    "chatIntegration": "Chat Integration"
+  },
+  "obsTab": {
+    "title": "OBS Connection",
+    "host": "Host",
+    "port": "Port",
+    "password": "Password",
+    "connect": "Connect to OBS",
+    "autoConnect": "Auto-connect on startup",
+    "scene": "Scene",
+    "source": "Source",
+    "filterByType": "Filter by Type",
+    "testButton": "Test Polaroid",
+    "takeScreenshot": "Take Screenshot",
+    "connectionSuccess": "Successfully connected to OBS",
+    "connectionError": "Error connecting to OBS: {error}",
+    "noSources": "No sources available. Please connect to OBS first.",
+    "selectScene": "Select a scene first"
+  },
+  "settingsTab": {
+    "title": "Settings",
+    "imageSettings": "Image Settings",
+    "imageWidth": "Image Width",
+    "imageHeight": "Image Height",
+    "outputFolder": "Output Folder",
+    "selectFolder": "Select Folder",
+    "saveScreenshots": "Save Screenshots",
+    "discordSettings": "Discord Settings",
+    "sendToDiscord": "Send to Discord",
+    "discordWebhook": "Discord Webhook URL",
+    "browserSource": "Browser Source",
+    "wsPort": "WebSocket Port",
+    "animationDelay": "Animation Delay (ms)",
+    "language": "Language",
+    "restartRequired": "App restart required for language changes to take effect"
+  },
+  "chatTab": {
+    "title": "Chat Integration",
+    "enable": "Enable Twitch Integration",
+    "channel": "Channel",
+    "username": "Username",
+    "oauthToken": "OAuth Token",
+    "command": "Command",
+    "permissions": "Who Can Use Command",
+    "permEveryone": "Everyone",
+    "permSubscriber": "Subscribers+",
+    "permVIP": "VIPs+",
+    "permModerator": "Moderators+",
+    "permBroadcaster": "Broadcaster Only"
+  },
+  "logs": {
+    "title": "Application Logs",
+    "clear": "Clear",
+    "expand": "Expand logs",
+    "collapse": "Collapse logs"
+  }
+}

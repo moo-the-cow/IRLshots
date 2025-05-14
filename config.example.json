@@ -1,0 +1,27 @@
+{
+  "obs": {
+    "host": "localhost",
+    "port": 4455,
+    "password": ""
+  },
+  "animationDelay": 5000,
+  "captureSource": "YourSourceName",
+  "saveScreenshots": true,
+  "outputFolder": "path/to/output/folder",
+  "offsetX": 0,
+  "offsetY": 0,
+  "canvasWidth": 1920,
+  "canvasHeight": 1080,
+  "imageWidth": 800,
+  "imageHeight": 600,
+  "sendToDiscord": false,
+  "discordWebhook": "",
+  "wsPort": 3456,
+  "twitch": {
+    "enabled": false,
+    "username": "",
+    "oauthToken": "",
+    "channel": "",
+    "command": "!sc"
+  }
+}
