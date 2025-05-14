@@ -2,7 +2,7 @@
 
 ![IRLshots Logo](./build/icons/128x128.png)
 
-IRLshots is a powerful screenshot and animation tool for streamers that integrates with OBS Studio. It allows you to capture screenshots from your stream content, display them with stylish animations, and share them via Discord or Twitch chat commands.
+IRLshots is a simple screenshot and animation tool for streamers that integrates with OBS Studio. It allows you to capture screenshots from your stream content, display them with stylish animations, and share them via Discord or Twitch chat commands.
 
 ## Features
 
@@ -20,7 +20,7 @@ IRLshots is a powerful screenshot and animation tool for streamers that integrat
 
 ### From Release
 
-1. Download the latest release from the [Releases page](https://github.com/yourusername/irlshots/releases)
+1. Download the latest release from the [Releases page](https://github.com/IRLtools/IRLshots/releases)
 2. Run the installer and follow the prompts
 3. Launch IRLshots from your Start menu or desktop shortcut
 
@@ -66,13 +66,6 @@ npm run pack
 1. Go to the Settings tab and enable "Send to Discord"
 2. Create a webhook in your Discord server (Server Settings > Integrations > Webhooks)
 3. Copy the webhook URL and paste it into IRLshots
-
-### Twitch Chat Commands
-
-1. Go to the Chat Integration tab and enable Twitch integration
-2. Enter your channel name and authentication details
-3. Set the command (default is !polaroid) and permission level
-4. When viewers use the command, IRLshots will take a screenshot
 
 ## Keyboard Shortcuts
 
