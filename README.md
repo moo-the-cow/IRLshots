@@ -67,10 +67,6 @@ npm run pack
 2. Create a webhook in your Discord server (Server Settings > Integrations > Webhooks)
 3. Copy the webhook URL and paste it into IRLshots
 
-## Keyboard Shortcuts
-
-- Take Screenshot: Not yet implemented (coming soon!)
-- Test Animation: Not yet implemented (coming soon!)
 
 ## Configuration
 
@@ -83,16 +79,6 @@ IRLshots stores its configuration in the AppData folder. You can customize:
 - Discord webhook URL
 - Twitch command and permissions
 - Interface language
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
