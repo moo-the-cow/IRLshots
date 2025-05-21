@@ -1,5 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
-
+const path = require('path');
 // Better debugging for exposed APIs
 console.log('Setting up API bridge');
 
@@ -38,6 +38,9 @@ const apiMethods = {
       console.log('Log received:', message);
       callback(message);
     });
+  },
+  utils: {
+    normalizePath: (p) => path.normalize(p)
   }
 };
 
