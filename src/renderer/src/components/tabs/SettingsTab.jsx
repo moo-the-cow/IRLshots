@@ -11,9 +11,7 @@ const SettingsTab = () => {
     try {
       const result = await window.api.selectOutputFolder();
       if (result?.filePaths?.[0]) {
-        // Using the exposed electron utility
-        const safePath = window.api.pathUtils?.normalize(result.filePaths[0]);
-        updateConfig('outputFolder', safePath);
+        updateConfig('outputFolder', result.filePaths[0]);
       }
     } catch (error) {
       console.error('Folder selection failed:', error);
