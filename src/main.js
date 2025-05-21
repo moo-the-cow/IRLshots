@@ -429,14 +429,14 @@ ipcMain.handle('select-template', async () => {
     properties: ['openFile'],
     filters: [{ name: 'Images', extensions: ['png', 'jpg', 'jpeg'] }]
   });
-  return canceled ? null : filePaths[0];
+  return canceled ? null : path.normalize(filePaths[0]);
 });
 
 ipcMain.handle('select-output-folder', async () => {
   const { canceled, filePaths } = await dialog.showOpenDialog(mainWindow, {
     properties: ['openDirectory']
   });
-  return canceled ? null : filePaths[0];
+  return canceled ? null : path.normalize(filePaths[0]);
 });
 
 // Handle Twitch chat messages
