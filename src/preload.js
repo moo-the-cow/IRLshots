@@ -1,4 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
+const electronUtil = require('electron-util');
 
 // Better debugging for exposed APIs
 console.log('Setting up API bridge');
@@ -30,6 +31,9 @@ const apiMethods = {
   },
   selectOutputFolder: () => {
     console.log('selectOutputFolder called');
+    utils: {
+      normalizePath: electronUtil.normalizePath
+    }
     return ipcRenderer.invoke('select-output-folder');
   },
   onLog: (callback) => {
