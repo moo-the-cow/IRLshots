@@ -1,5 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron');
 const electronUtil = require('electron-util');
+const path = require('path');
 
 // Better debugging for exposed APIs
 console.log('Setting up API bridge');
@@ -41,8 +42,13 @@ const apiMethods = {
     });
   },
   utils: {
+    normalizePath: (p) => path.normalize(p)
+  }
+  /*
+  utils: {
     normalizePath: (path) => electronUtil.normalizePath(path)
   }
+  */
 };
 
 contextBridge.exposeInMainWorld('api', apiMethods);
