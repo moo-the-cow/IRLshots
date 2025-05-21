@@ -11,7 +11,7 @@ const SettingsTab = () => {
     try {
       const result = await window.api.selectOutputFolder();
       if (result?.filePaths?.[0]) {
-        updateConfig('outputFolder', result.filePaths[0]);
+        updateConfig('outputFolder', result.filePaths[0].replace(/\\/g, '/'));
       }
     } catch (error) {
       console.error('Folder selection failed:', error);
