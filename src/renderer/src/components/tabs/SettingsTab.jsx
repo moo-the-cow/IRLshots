@@ -2,17 +2,18 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../contexts/AppContext';
 import { LanguageContext } from '../../contexts/LanguageContext';
 import { Input, Toggle, Button, Select } from '../common/StyledInputs';
-
 const SettingsTab = () => {
   const { config, updateConfig } = useContext(AppContext);
   const { t, changeLanguage, getAvailableLanguages } = useContext(LanguageContext);
+  const path = window.require('path');
   
   // Function to handle selecting an output folder
   const selectOutputFolder = async () => {
     try {
       const result = await window.api.selectOutputFolder();
       if (result && !result.canceled && result.filePaths && result.filePaths[0]) {
-        updateConfig('outputFolder', result.filePaths[0]);
+        const normalizedPath = path.normalize(result.filePaths[0]);
+        updateConfig('outputFolder', normalizedPath);
       }
     } catch (error) {
       window.api.onLog(`Error selecting output folder: ${error.message}`);
