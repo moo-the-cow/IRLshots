@@ -31,9 +31,6 @@ const apiMethods = {
   },
   selectOutputFolder: () => {
     console.log('selectOutputFolder called');
-    utils: {
-      normalizePath: electronUtil.normalizePath
-    }
     return ipcRenderer.invoke('select-output-folder');
   },
   onLog: (callback) => {
@@ -42,6 +39,9 @@ const apiMethods = {
       console.log('Log received:', message);
       callback(message);
     });
+  },
+  utils: {
+    normalizePath: (path) => electronUtil.normalizePath(path)
   }
 };
 
