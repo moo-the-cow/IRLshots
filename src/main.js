@@ -436,7 +436,16 @@ ipcMain.handle('select-output-folder', async () => {
   const { canceled, filePaths } = await dialog.showOpenDialog(mainWindow, {
     properties: ['openDirectory']
   });
-  return canceled ? null : path.normalize(filePaths[0]);
+  if (canceled || !filePaths[0]) return null;
+
+  // Critical fix for Windows paths
+  const windowsPath = path.win32.normalize(filePaths[0]);
+  
+  // Debug logs (remove in production)
+  console.log('Original path:', filePaths[0]);
+  console.log('Normalized Windows path:', windowsPath);
+  
+  return windowsPath;
 });
 
 // Handle Twitch chat messages
