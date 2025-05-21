@@ -12,7 +12,7 @@ const SettingsTab = () => {
       const result = await window.api.selectOutputFolder();
       if (result?.filePaths?.[0]) {
         // Using the exposed electron utility
-        const safePath = window.api.utils.normalizePath(result.filePaths[0]);
+        const safePath = window.api.pathUtils?.normalize(result.filePaths[0]);
         updateConfig('outputFolder', safePath);
       }
     } catch (error) {
